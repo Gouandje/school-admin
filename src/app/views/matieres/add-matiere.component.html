@@ -1,0 +1,71 @@
+ <!-- Education -->
+ <div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+    
+            <div class="card">
+              <div class="card-header">
+                <strong>Ajouter</strong> les matières
+              </div>
+              <div class="card-body">
+             <form [formGroup] = "matiereForm" (ngSubmit)="matieresubmit()"> 
+                <div class="form-group">
+                     <label for="nf-email">Choisir une Filière</label>
+                     <select class="form-control" placeholder="Filière eg: web marketing" formaControlName="filiere"
+                             required >  
+                             <option [value]="f" *ngFor="let f of filiere">{{f}}</option>
+                     </select>    
+                </div>
+                <div class="form-group">
+                    <label for="nf-email">Choisir un Niveau</label>
+                    <select class="form-control" placeholder="Niveau eg: Licence 1 (L1)"  formaControlName="niveau"
+                            required>  
+                            <option [value]="n" *ngFor="let n of niveau">{{n}}</option>
+                    </select>    
+               </div>
+                <div class="form-group">
+                     <label for="nf-email">Choisir le semestre</label>
+                     <select class="form-control" placeholder="Semestre eg: web marketing"  formaControlName="matiere"
+                             required >  
+                             <option [value]="s" *ngFor="let s of semestre">{{s}}</option>
+                     </select>    
+                </div>
+                <div class="d-flex justify-content-between card-title">
+                    <h4 class="d-flex align-items-center"> cliquez sur bouton pour ajouter une Matière</h4>
+                    <button class="btn btn-primary" (click)="addMatiere()">+</button>
+                </div>
+                
+                <div class="row" *ngFor="let ed of matiere.matiere">
+                    <div class="form-group">
+                        <input  type= "text" class="form-control" placeholder="code"  formaControlName="ed.code"
+                                 required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control"  formaControlName="ed.libele"
+                                placeholder="base de données relationnelle" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" formaControlName="ed.credit"
+                                placeholder="nombre de crédits exemple:2"  required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control"  formaControlName="ed.nombreHeure" placeholder="nombre d'heure exemple:2" required>        
+                    </div>
+                    <div class="form-group">
+                    <button class="btn btn-danger" (click)="deleteMatiere($event)" ng-show="$first && !$last">-</button>
+                    </div>
+               </div>
+               <div class="form-group">
+                <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Envoyer</button>
+                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Annuler</button>
+               </div>         
+           </form>   
+
+        </div> 
+        <div class="card-footer">
+            <P>Page d'enregistrement des matières</P>
+        </div>
+  </div>
+</div>
+</div>
+</div>

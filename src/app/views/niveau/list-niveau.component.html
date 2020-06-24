@@ -1,0 +1,40 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> Liste des Niveaux
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th>Titre de la filière</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let niveau of niveaux">
+                        <td>{{niveau?.libelle}} </td>     
+                        <td>
+                            <a [routerLink]="['/niveau/nouveau-niveau/edit/', niveau.id]" class=""><img src="assets/img/icone_edit.jpg" style="margin-bottom: 5px;" width="4%" title="modifier" alt="modifier"></a>
+                        <a (click)="onDelete(niveau.id)" class=""><img src="assets/img/icone_delete.jpg" width="4%" title="supprimer" alt="supprimer"></a>
+                        </td>
+                    </tr>     
+                </tbody>
+                </table>
+                <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div> 
+</div>    

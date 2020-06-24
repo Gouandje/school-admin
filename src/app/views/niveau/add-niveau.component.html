@@ -1,0 +1,23 @@
+<div class="col-md-12">
+    
+    <div class="card">
+      <div class="card-header">
+        <strong>Créer</strong> un niveau
+      </div>
+      <div class="card-body">
+        <form [formGroup]="niveauForm" (ngSubmit)="niveauSubmit()">
+          <div class="form-group">
+            <label for="nf-email">Renseigner le niveau à ajouter</label>
+            <input type="text" id="libelle" formControlName="libelle" class="form-control" placeholder="Enter le niveau..">     
+          </div>
+          <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Envoyer</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Annuler</button>
+        </form>
+      </div>
+      <div class="card-footer">
+
+        <p>page de création de niveau</p>
+     
+      </div>
+    </div>
+</div><!--/.col-->

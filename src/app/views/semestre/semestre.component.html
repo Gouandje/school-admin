@@ -1,0 +1,29 @@
+<div class="col-md-12">
+    
+    <div class="card">
+      <div class="card-header">
+        <strong>Créer</strong> un semestre
+      </div>
+      <div class="card-body">
+        <form [formGroup]="semestreForm" (ngSubmit)="semestreSubmit()">
+          <div class="form-group">
+            <label for="nf-email">Choisir le type le  Niveau</label>
+                <select class="form-control" formControlName="niveau">  
+                    <option [value]="i" *ngFor="let ni of niveau; index as i">{{ni.libelle}}</option>
+                </select>      
+          </div>
+          <div class="form-group">
+            <label for="nf-email">Renseigner le semestre à ajouter</label>
+            <input type="text" id="libelle" formControlName="libelle" class="form-control" placeholder="Enter le niveau..">     
+          </div>
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </form>
+      </div>
+      <div class="card-footer">
+
+        <p>page de création de niveau</p>
+     
+      </div>
+    </div>
+</div><!--/.col-->
